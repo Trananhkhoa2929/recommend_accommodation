@@ -21,7 +21,7 @@ st.set_page_config(
     page_icon="📜",
     layout="wide"
 )
-st. markdown(CUSTOM_CSS, unsafe_allow_html=True)
+st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 # ============================================================================
 # SESSION STATE
@@ -47,7 +47,7 @@ st.markdown("""
 
 with st.sidebar:
     st.markdown("### 🆔 User Info")
-    st.code(f"ID: {st.session_state. user_id}")
+    st.code(f"ID: {st.session_state.user_id}")
     
     st.markdown("---")
     
@@ -78,13 +78,13 @@ if not firebase_service.enabled:
     FIREBASE_DATABASE_URL=https://your-project-id.firebaseio.com
     ```
     """)
-    st. stop()
+    st.stop()
 
 # ============================================================================
 # LOAD & DISPLAY HISTORY
 # ============================================================================
 
-history = firebase_service.get_search_history(st.session_state. user_id, limit=20)
+history = firebase_service.get_search_history(st.session_state.user_id, limit=20)
 
 if not history:
     st.markdown("""
@@ -103,7 +103,7 @@ else:
     for entry in history:
         # Parse timestamp
         try:
-            timestamp = datetime.fromisoformat(entry. get('timestamp', ''))
+            timestamp = datetime.fromisoformat(entry.get('timestamp', ''))
             date_str = timestamp.strftime("%d/%m/%Y %H:%M")
         except:
             date_str = "N/A"
@@ -113,7 +113,7 @@ else:
         <div class='history-card'>
             <div class='history-date'>🕐 {date_str}</div>
             <div class='history-location'>🌊 {entry.get('search_query', 'N/A')}</div>
-            <div style='margin-top: 0. 5rem;'>
+            <div style='margin-top: 0.5rem;'>
                 <span class='history-tag'>💰 {entry.get('budget', 'N/A')}</span>
                 <span class='history-tag'>🏠 {entry.get('type', 'N/A')}</span>
                 <span class='history-tag'>📊 {entry.get('results_count', 0)} kết quả</span>
@@ -126,18 +126,18 @@ else:
         if top_results:
             with st.expander("👀 Xem kết quả đề xuất"):
                 for i, result in enumerate(top_results, 1):
-                    st. markdown(f"""
-                    **#{i} {result. get('name', 'N/A')}**  
+                    st.markdown(f"""
+                    **#{i} {result.get('name', 'N/A')}**  
                     Loại: {result.get('type', 'N/A')} | 
                     Điểm: {result.get('score', 0)} | 
-                    Khoảng cách: {result. get('distance', 'N/A')}
+                    Khoảng cách: {result.get('distance', 'N/A')}
                     """)
         
         # Delete button
         entry_id = entry.get('id', '')
         if entry_id:
             if st.button(f"🗑️ Xóa", key=f"del_{entry_id}"):
-                if firebase_service.delete_history_entry(st.session_state. user_id, entry_id):
+                if firebase_service.delete_history_entry(st.session_state.user_id, entry_id):
                     st.rerun()
         
         st.markdown("---")

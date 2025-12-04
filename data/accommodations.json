@@ -1,0 +1,112 @@
+{
+  "vung_tau": {
+    "name": "Vũng Tàu",
+    "lat": 10.3460,
+    "lon": 107.0843,
+    "accommodations": [
+      {
+        "id": "vt001",
+        "name": "Pullman Vung Tau",
+        "lat": 10.3520,
+        "lon": 107.0756,
+        "type": "resort",
+        "price_level": "high",
+        "rating": 4.5,
+        "reviews": 1250,
+        "tags": ["beachfront", "pool", "spa", "restaurant", "wifi", "parking", "family"],
+        "amenities": ["Hồ bơi", "Spa", "Nhà hàng", "Bar", "Gym", "Kids club"],
+        "address": "3 Thùy Vân, Phường 2, Vũng Tàu",
+        "phone": "0254 355 8888",
+        "website": "https://www.pullman-vungtau.com",
+        "image_url": "https://example.com/pullman.jpg",
+        "description": "Resort 5 sao ngay bãi biển Thùy Vân"
+      },
+      {
+        "id": "vt002",
+        "name": "Imperial Hotel Vung Tau",
+        "lat": 10.3485,
+        "lon": 107.0812,
+        "type": "hotel",
+        "price_level": "high",
+        "rating": 4.3,
+        "reviews": 890,
+        "tags": ["beachfront", "pool", "restaurant", "wifi", "parking", "romantic"],
+        "amenities": ["Hồ bơi", "Nhà hàng", "Bar", "Gym"],
+        "address": "159 Thùy Vân, Phường 8, Vũng Tàu",
+        "phone": "0254 362 8888",
+        "website": "",
+        "image_url": "",
+        "description": "Khách sạn 5 sao view biển"
+      },
+      {
+        "id": "vt003",
+        "name": "Lan Rừng Resort",
+        "lat": 10.3892,
+        "lon": 107.1245,
+        "type": "resort",
+        "price_level": "high",
+        "rating": 4.6,
+        "reviews": 2100,
+        "tags": ["beachfront", "pool", "spa", "quiet", "romantic", "scenic"],
+        "amenities": ["Bãi biển riêng", "Hồ bơi", "Spa", "Nhà hàng"],
+        "address": "Phước Hải, Long Điền, Bà Rịa - Vũng Tàu",
+        "phone": "0254 378 9999",
+        "website": "https://lanrungresort.com",
+        "image_url": "",
+        "description": "Resort yên tĩnh, phù hợp nghỉ dưỡng"
+      },
+      {
+        "id": "vt004",
+        "name": "The Cap Hotel",
+        "lat": 10.3298,
+        "lon": 107.0723,
+        "type": "hotel",
+        "price_level": "medium",
+        "rating": 4.2,
+        "reviews": 650,
+        "tags": ["pool", "restaurant", "wifi", "parking", "family"],
+        "amenities": ["Hồ bơi", "Nhà hàng", "Wifi miễn phí"],
+        "address": "7 Lê Hồng Phong, Phường 4, Vũng Tàu",
+        "phone": "0254 352 1234",
+        "website": "",
+        "image_url": "",
+        "description": "Khách sạn 4 sao trung tâm thành phố"
+      },
+      {
+        "id": "vt005",
+        "name": "Biển Xanh Homestay",
+        "lat": 10.3445,
+        "lon": 107.0798,
+        "type": "guest_house",
+        "price_level": "low",
+        "rating": 4.0,
+        "reviews": 320,
+        "tags": ["wifi", "quiet", "family", "budget"],
+        "amenities": ["Wifi miễn phí", "Bếp chung", "Sân thượng"],
+        "address": "45 Nguyễn Trãi, Phường 1, Vũng Tàu",
+        "phone": "0903 123 456",
+        "website": "",
+        "image_url": "",
+        "description": "Homestay giá rẻ, gần biển"
+      }
+    ]
+  },
+  "nha_trang": {
+    "name": "Nha Trang",
+    "lat": 12.2388,
+    "lon": 109.1967,
+    "accommodations": []
+  },
+  "da_nang": {
+    "name": "Đà Nẵng",
+    "lat": 16.0544,
+    "lon": 108.2022,
+    "accommodations": []
+  },
+  "phu_quoc": {
+    "name": "Phú Quốc",
+    "lat": 10.2899,
+    "lon": 103.9840,
+    "accommodations": []
+  }
+}

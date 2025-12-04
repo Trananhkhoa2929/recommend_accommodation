@@ -1,91 +1,167 @@
 """
-Pattern 5: Searching
-OpenStreetMap Overpass API Search
+Pattern 5: Local Data Search
+Tìm kiếm từ dữ liệu local JSON thay vì API
 """
 
-import time
-import requests
+import json
+import os
 from typing import List, Dict, Optional, Tuple
+from src.utils.distance import haversine_distance
+
+# Path to data file
+DATA_FILE = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'accommodations.json')
 
 
-# Overpass API servers (fallback)
-OVERPASS_SERVERS = [
-    "https://overpass-api.de/api/interpreter",
-    "https://overpass. kumi.systems/api/interpreter",
-    "https://overpass. openstreetmap.ru/api/interpreter"
-]
+def load_data() -> Dict:
+    """Load dữ liệu từ file JSON"""
+    try:
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"❌ Không tìm thấy file: {DATA_FILE}")
+        return {}
+    except json.JSONDecodeError as e:
+        print(f"❌ Lỗi parse JSON: {e}")
+        return {}
+
+
+def find_nearest_location(lat: float, lon: float, data: Dict) -> Optional[str]:
+    """
+    Tìm địa điểm gần nhất với tọa độ cho trước
+    
+    Args:
+        lat, lon: Tọa độ tìm kiếm
+        data: Dữ liệu accommodations
+    
+    Returns:
+        Key của địa điểm gần nhất (vd: 'vung_tau')
+    """
+    min_distance = float('inf')
+    nearest_location = None
+    
+    for location_key, location_data in data.items():
+        loc_lat = location_data.get('lat', 0)
+        loc_lon = location_data.get('lon', 0)
+        
+        distance = haversine_distance(lat, lon, loc_lat, loc_lon)
+        
+        if distance < min_distance:
+            min_distance = distance
+            nearest_location = location_key
+    
+    # Chỉ trả về nếu khoảng cách < 50km
+    if min_distance < 50:
+        return nearest_location
+    
+    return None
 
 
 def search_accommodations(search_request: Dict) -> Tuple[Optional[List], Optional[str]]:
     """
-    Tìm kiếm nơi ở bằng OpenStreetMap Overpass API với retry và fallback
+    Tìm kiếm nơi ở từ dữ liệu local
     
     Args:
         search_request: Dict chứa thông tin tìm kiếm
+            - lat, lon: Tọa độ trung tâm
+            - radius: Bán kính tìm kiếm (meters)
+            - type: Loại nơi ở
+            - tags: Tags mong muốn
+            - budget: Mức giá
     
     Returns:
-        Tuple (osm_elements, error_message)
+        Tuple (elements, error_message)
     """
+    # Load data
+    data = load_data()
+    
+    if not data:
+        return None, "Không thể tải dữ liệu địa điểm"
+    
     # Extract parameters
     lat = search_request['lat']
     lon = search_request['lon']
-    acc_type = search_request['type']
-    radius = search_request['radius']
+    radius_m = search_request.get('radius', 5000)
+    radius_km = radius_m / 1000
     
-    # Expand tourism types for better results
-    tourism_types = [acc_type, 'hotel', 'guest_house', 'apartment', 'hostel']
-    types_regex = "|".join(tourism_types)
+    # Find nearest location
+    location_key = find_nearest_location(lat, lon, data)
     
-    # Build Overpass query
-    query = f"""
-    [out:json][timeout:20];
-    (
-      node["tourism"~"^({types_regex})$"](around:{radius},{lat},{lon});
-      way["tourism"~"^({types_regex})$"](around:{radius},{lat},{lon});
-    );
-    out body 50;
+    if not location_key:
+        return None, "Không tìm thấy địa điểm nào trong hệ thống gần vị trí này"
+    
+    location_data = data[location_key]
+    accommodations = location_data.get('accommodations', [])
+    
+    if not accommodations:
+        return None, f"Chưa có dữ liệu nơi ở cho {location_data.get('name', location_key)}"
+    
+    # Filter by distance
+    results = []
+    for acc in accommodations:
+        acc_lat = acc.get('lat', 0)
+        acc_lon = acc.get('lon', 0)
+        
+        distance = haversine_distance(lat, lon, acc_lat, acc_lon)
+        
+        if distance <= radius_km:
+            # Convert to element format (compatible with normalize function)
+            element = {
+                'id': acc.get('id', ''),
+                'lat': acc_lat,
+                'lon': acc_lon,
+                'tags': {
+                    'name': acc.get('name', 'Unnamed'),
+                    'tourism': acc.get('type', 'hotel'),
+                    'price_level': acc.get('price_level', 'medium'),
+                    'rating': acc.get('rating', 0),
+                    'reviews': acc.get('reviews', 0),
+                    'address': acc.get('address', ''),
+                    'phone': acc.get('phone', ''),
+                    'website': acc.get('website', ''),
+                    'description': acc.get('description', ''),
+                    'amenities': acc.get('amenities', []),
+                    'custom_tags': acc.get('tags', []),
+                    'source': 'local'
+                }
+            }
+            results.append(element)
+    
+    if not results:
+        return None, f"Không tìm thấy nơi ở nào trong bán kính {radius_km}km"
+    
+    return results, None
+
+
+def get_supported_locations() -> List[Dict]:
     """
+    Lấy danh sách các địa điểm được hỗ trợ
     
-    last_error = None
+    Returns:
+        List các địa điểm với name, lat, lon
+    """
+    data = load_data()
     
-    # Try each server
-    for server_url in OVERPASS_SERVERS:
-        try:
-            response = requests.post(
-                server_url,
-                data={'data': query},
-                timeout=25,
-                headers={'User-Agent': 'BeachAccommodationFinder/2.0'}
-            )
-            
-            if response.status_code == 200:
-                data = response.json()
-                
-                if 'elements' in data and len(data['elements']) > 0:
-                    return data['elements'], None
-                else:
-                    last_error = f"Server {server_url. split('/')[2]} không có kết quả"
-                    continue
-            
-            elif response.status_code in [504, 429]:
-                last_error = f"Server {server_url.split('/')[2]} quá tải"
-                time.sleep(2)
-                continue
-            
-            else:
-                last_error = f"HTTP {response.status_code}"
-                continue
-                
-        except requests.exceptions.Timeout:
-            last_error = f"Server {server_url.split('/')[2]} timeout"
-            continue
-        
-        except requests.exceptions.RequestException as e:
-            last_error = f"Lỗi kết nối: {str(e)}"
-            continue
-        
-        except Exception as e:
-            last_error = f"Lỗi: {str(e)}"
-            continue
+    locations = []
+    for key, value in data.items():
+        locations.append({
+            'key': key,
+            'name': value.get('name', key),
+            'lat': value.get('lat', 0),
+            'lon': value.get('lon', 0),
+            'count': len(value.get('accommodations', []))
+        })
     
-    return None, f"Không thể kết nối Overpass API.  {last_error}"
+    return locations
+
+
+def get_all_tags() -> List[str]:
+    """Lấy tất cả tags có trong dữ liệu"""
+    data = load_data()
+    
+    all_tags = set()
+    for location_data in data.values():
+        for acc in location_data.get('accommodations', []):
+            tags = acc.get('tags', [])
+            all_tags.update(tags)
+    
+    return sorted(list(all_tags))

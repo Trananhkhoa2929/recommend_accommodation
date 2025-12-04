@@ -59,7 +59,7 @@ def validate_and_geocode(location_name: str) -> Tuple[Optional[Dict], Optional[s
         
         # Build geo_data
         geo_data = {
-            'name': result. get('display_name', location_name),
+            'name': result.get('display_name', location_name),
             'lat': float(result['lat']),
             'lon': float(result['lon']),
             'type': result.get('type', 'unknown'),
@@ -68,9 +68,9 @@ def validate_and_geocode(location_name: str) -> Tuple[Optional[Dict], Optional[s
         
         return geo_data, None
         
-    except requests.exceptions. Timeout:
+    except requests.exceptions.Timeout:
         return None, "Timeout khi gọi Nominatim API (quá 10s)"
-    except requests.exceptions. RequestException as e:
+    except requests.exceptions.RequestException as e:
         return None, f"Lỗi kết nối Nominatim API: {str(e)}"
     except Exception as e:
         return None, f"Lỗi không xác định: {str(e)}"

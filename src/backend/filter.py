@@ -23,7 +23,7 @@ def filter_results(accommodations: List[Dict], search_request: Dict) -> List[Dic
     center_lat = search_request['lat']
     center_lon = search_request['lon']
     max_distance = search_request['radius'] / 1000  # Convert m to km
-    required_tags = search_request. get('tags', [])
+    required_tags = search_request.get('tags', [])
     
     for acc in accommodations:
         # Calculate distance

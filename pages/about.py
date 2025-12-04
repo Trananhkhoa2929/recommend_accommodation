@@ -16,13 +16,13 @@ st.set_page_config(
     page_icon="ℹ️",
     layout="wide"
 )
-st. markdown(CUSTOM_CSS, unsafe_allow_html=True)
+st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 # ============================================================================
 # HEADER
 # ============================================================================
 
-st. markdown("""
+st.markdown("""
 <div class='about-header'>
     <h1>ℹ️ Giới thiệu</h1>
     <p>Đồ án Tư duy Tính toán - Năm 2</p>
@@ -33,9 +33,9 @@ st. markdown("""
 # PROJECT INFO
 # ============================================================================
 
-st. markdown("### 📚 Thông tin Dự án")
+st.markdown("### 📚 Thông tin Dự án")
 
-col1, col2 = st. columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
@@ -156,11 +156,11 @@ for title, desc in steps:
 # PROJECT STRUCTURE
 # ============================================================================
 
-st. markdown("### 📁 Cấu trúc dự án")
+st.markdown("### 📁 Cấu trúc dự án")
 
 st.code("""
 beach-accommodation-finder/
-├── app. py                      # Main entry point
+├── app.py                      # Main entry point
 ├── config/
 │   ├── settings.py             # App settings
 │   └── styles.py               # CSS styles
@@ -183,12 +183,12 @@ beach-accommodation-finder/
     ├── backend/
     │   ├── osm_search.py       # Pattern 5: OSM search
     │   ├── data_normalizer.py  # Pattern 6: Normalize data
-    │   ├── filter. py           # Pattern 7: Filter
-    │   └── ranking. py          # Pattern 8: Ranking
+    │   ├── filter.py           # Pattern 7: Filter
+    │   └── ranking.py          # Pattern 8: Ranking
     ├── services/
     │   └── firebase_service.py # Firebase integration
     └── utils/
-        ├── distance. py         # Haversine distance
+        ├── distance.py         # Haversine distance
         └── formatters.py       # Format helpers
 """, language="text")
 
@@ -196,10 +196,10 @@ beach-accommodation-finder/
 # FOOTER
 # ============================================================================
 
-st. markdown("---")
+st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: gray; padding: 1rem 0;'>
     <p>Made with ❤️ by Trananhkhoa2929</p>
-    <p style='font-size: 0. 85rem;'>© 2025 - Đồ án Tư duy Tính toán</p>
+    <p style='font-size: 0.85rem;'>© 2025 - Đồ án Tư duy Tính toán</p>
 </div>
 """, unsafe_allow_html=True)

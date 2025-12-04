@@ -1,0 +1,188 @@
+{
+  "provinces": {
+    "vung_tau": {
+      "name": "Vũng Tàu",
+      "aliases": ["vung tau", "vungtau", "vũng tàu", "br-vt", "bà rịa vũng tàu"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "bai_truoc",
+          "name": "Bãi Trước",
+          "aliases": ["bãi trước", "bai truoc", "front beach", "thùy vân"],
+          "lat": 10.3460,
+          "lon": 107.0843,
+          "description": "Bãi biển sầm uất nhất Vũng Tàu, nhiều khách sạn và nhà hàng"
+        },
+        {
+          "key": "bai_sau",
+          "name": "Bãi Sau",
+          "aliases": ["bãi sau", "bai sau", "back beach"],
+          "lat": 10.3380,
+          "lon": 107.0920,
+          "description": "Bãi biển dài, yên tĩnh hơn Bãi Trước"
+        },
+        {
+          "key": "long_hai",
+          "name": "Long Hải",
+          "aliases": ["long hải", "long hai"],
+          "lat": 10.4167,
+          "lon": 107.1833,
+          "description": "Bãi biển hoang sơ, ít du khách"
+        },
+        {
+          "key": "ho_coc",
+          "name": "Hồ Cốc",
+          "aliases": ["hồ cốc", "ho coc"],
+          "lat": 10.4833,
+          "lon": 107.4167,
+          "description": "Bãi biển đẹp, yên tĩnh, phù hợp nghỉ dưỡng"
+        }
+      ]
+    },
+    "nha_trang": {
+      "name": "Nha Trang",
+      "aliases": ["nha trang", "nhatrang"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "nha_trang_beach",
+          "name": "Bãi biển Nha Trang",
+          "aliases": ["bãi biển nha trang", "trần phú"],
+          "lat": 12.2388,
+          "lon": 109.1967,
+          "description": "Bãi biển chính của thành phố Nha Trang"
+        },
+        {
+          "key": "doc_let",
+          "name": "Dốc Lết",
+          "aliases": ["dốc lết", "doc let"],
+          "lat": 12.5333,
+          "lon": 109.2333,
+          "description": "Bãi biển hoang sơ phía Bắc Nha Trang"
+        },
+        {
+          "key": "bai_dai",
+          "name": "Bãi Dài",
+          "aliases": ["bãi dài", "bai dai", "cam ranh"],
+          "lat": 11.9500,
+          "lon": 109.2167,
+          "description": "Bãi biển dài và đẹp ở Cam Ranh"
+        }
+      ]
+    },
+    "da_nang": {
+      "name": "Đà Nẵng",
+      "aliases": ["đà nẵng", "da nang", "danang"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "my_khe",
+          "name": "Mỹ Khê",
+          "aliases": ["mỹ khê", "my khe", "bãi biển mỹ khê"],
+          "lat": 16.0544,
+          "lon": 108.2478,
+          "description": "Một trong những bãi biển đẹp nhất hành tinh"
+        },
+        {
+          "key": "non_nuoc",
+          "name": "Non Nước",
+          "aliases": ["non nước", "non nuoc"],
+          "lat": 15.9833,
+          "lon": 108.2667,
+          "description": "Bãi biển gần Ngũ Hành Sơn"
+        }
+      ]
+    },
+    "phu_quoc": {
+      "name": "Phú Quốc",
+      "aliases": ["phú quốc", "phu quoc", "phuquoc", "đảo ngọc"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "bai_sao",
+          "name": "Bãi Sao",
+          "aliases": ["bãi sao", "bai sao", "sao beach"],
+          "lat": 10.0500,
+          "lon": 104.0167,
+          "description": "Bãi biển đẹp nhất Phú Quốc với cát trắng mịn"
+        },
+        {
+          "key": "bai_dai_pq",
+          "name": "Bãi Dài",
+          "aliases": ["bãi dài", "bai dai"],
+          "lat": 10.3333,
+          "lon": 103.8500,
+          "description": "Bãi biển dài 15km, nhiều resort cao cấp"
+        },
+        {
+          "key": "bai_truong",
+          "name": "Bãi Trường",
+          "aliases": ["bãi trường", "bai truong", "long beach"],
+          "lat": 10.1833,
+          "lon": 103.9667,
+          "description": "Bãi biển hoàng hôn đẹp nhất đảo"
+        }
+      ]
+    },
+    "quy_nhon": {
+      "name": "Quy Nhơn",
+      "aliases": ["quy nhơn", "quy nhon", "quynhon", "bình định"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "quy_nhon_beach",
+          "name": "Bãi biển Quy Nhơn",
+          "aliases": ["bãi biển quy nhơn"],
+          "lat": 13.7667,
+          "lon": 109.2333,
+          "description": "Bãi biển chính của thành phố"
+        },
+        {
+          "key": "ky_co",
+          "name": "Kỳ Co",
+          "aliases": ["kỳ co", "ky co"],
+          "lat": 13.8167,
+          "lon": 109.3000,
+          "description": "Bãi biển hoang sơ tuyệt đẹp"
+        }
+      ]
+    },
+    "ha_noi": {
+      "name": "Hà Nội",
+      "aliases": ["hà nội", "ha noi", "hanoi"],
+      "has_beach": false,
+      "beaches": [],
+      "message": "Hà Nội không có bãi biển.  Bạn có thể tìm ở Quảng Ninh (Hạ Long) hoặc Hải Phòng (Cát Bà, Đồ Sơn)."
+    },
+    "ho_chi_minh": {
+      "name": "TP.Hồ Chí Minh",
+      "aliases": ["hồ chí minh", "ho chi minh", "sài gòn", "saigon", "hcm", "tphcm"],
+      "has_beach": false,
+      "beaches": [],
+      "message": "TP.HCM không có bãi biển. Bạn có thể tìm ở Vũng Tàu (2 giờ lái xe) hoặc Long Hải."
+    },
+    "ha_long": {
+      "name": "Hạ Long",
+      "aliases": ["hạ long", "ha long", "halong", "quảng ninh"],
+      "has_beach": true,
+      "beaches": [
+        {
+          "key": "bai_chay",
+          "name": "Bãi Cháy",
+          "aliases": ["bãi cháy", "bai chay"],
+          "lat": 20.9500,
+          "lon": 107.0667,
+          "description": "Bãi biển nhân tạo nổi tiếng Hạ Long"
+        },
+        {
+          "key": "tuan_chau",
+          "name": "Tuần Châu",
+          "aliases": ["tuần châu", "tuan chau"],
+          "lat": 20.9167,
+          "lon": 106.9833,
+          "description": "Đảo du lịch với bãi biển đẹp"
+        }
+      ]
+    }
+  }
+}
