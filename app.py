@@ -8,10 +8,6 @@ import uuid
 import sys
 from pathlib import Path
 
-# Thêm thư mục gốc vào sys.path để import được các module
-ROOT_DIR = Path(__file__). parent
-sys.path.insert(0, str(ROOT_DIR))
-
 # Config
 from config.settings import PAGE_CONFIG
 from config.styles import CUSTOM_CSS
