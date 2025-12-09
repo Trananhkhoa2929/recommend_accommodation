@@ -1,0 +1,1242 @@
+{
+  "meta": {
+    "version": "2.1",
+    "updated_at": "2025-12-09",
+    "description": "Từ điển bãi biển Việt Nam cho hệ thống Beach Finder. Bao gồm alias chuẩn hóa, toạ độ, mùa đẹp, lưu ý an toàn.",
+    "schema": {
+      "province": {
+        "key": "snake_case",
+        "name": "Chuẩn tiếng Việt có dấu",
+        "aliases": ["không dấu", "viết liền", "tên gọi khác", "english/local"],
+        "region": "bac_bo | bac_trung_bo | nam_trung_bo | nam_bo | tay_nam_bo",
+        "has_beach": "bool",
+        "message": "Gợi ý/giải thích khi có hoặc không có biển",
+        "center": { "lat": "float", "lon": "float" },
+        "beaches": [
+          {
+            "key": "snake_case",
+            "name": "Tên bãi biển",
+            "aliases": ["alias khác nhau"],
+            "lat": "float",
+            "lon": "float",
+            "description": "Mô tả ngắn về bãi biển",
+            "best_season": ["month-range e.g. 3-8"],
+            "swimming_suitable": "bool",
+            "is_muddy": "bool",
+            "typical_waves": "calm | moderate | strong",
+            "caution_notes": ["cảnh báo nếu có"],
+            "activities": ["swim", "snorkel", "surf", "kayak", "family", "sunset", "photo"]
+          }
+        ]
+      }
+    }
+  },
+  "provinces": {
+    "quang_ninh": {
+      "name": "Quảng Ninh",
+      "aliases": ["quang ninh", "quảng ninh", "ha long", "hạ long", "halong", "bai chay", "bãi cháy", "van don", "vân đồn", "co to", "cô tô"],
+      "region": "bac_bo",
+      "has_beach": true,
+      "message": "Quảng Ninh là trung tâm du lịch biển phía Bắc (Hạ Long, Cô Tô, Vân Đồn).",
+      "center": { "lat": 20.971, "lon": 107.044 },
+      "beaches": [
+        {
+          "key": "bai_chay",
+          "name": "Bãi Cháy",
+          "aliases": ["bai chay", "bãi cháy", "bai chay beach"],
+          "lat": 20.9635,
+          "lon": 107.0467,
+          "description": "Bãi tắm nhân tạo lớn, dịch vụ sầm uất, phù hợp gia đình.",
+          "best_season": ["4-10"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family", "photo"]
+        },
+        {
+          "key": "tuan_chau",
+          "name": "Tuần Châu",
+          "aliases": ["tuan chau", "tuần châu", "dao tuan chau", "đảo tuần châu"],
+          "lat": 20.9413,
+          "lon": 106.9945,
+          "description": "Khu du lịch đảo với bãi tắm riêng, bến du thuyền.",
+          "best_season": ["4-10"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family", "kayak"]
+        },
+        {
+          "key": "co_to",
+          "name": "Cô Tô",
+          "aliases": ["co to", "đảo cô tô", "dao co to", "co to island"],
+          "lat": 21.0843,
+          "lon": 107.7928,
+          "description": "Biển xanh, hoang sơ. Đi lại bằng tàu cao tốc.",
+          "best_season": ["4-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Lưu ý thời tiết gió mùa, dễ hoãn tàu."],
+          "activities": ["swim", "photo", "sunset"]
+        },
+        {
+          "key": "quan_lan",
+          "name": "Quan Lạn - Minh Châu",
+          "aliases": ["quan lan", "minh chau", "quần lạn", "minh châu"],
+          "lat": 21.1006,
+          "lon": 107.4657,
+          "description": "Cát trắng mịn, nước trong, yên tĩnh.",
+          "best_season": ["4-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "tra_co",
+          "name": "Trà Cổ",
+          "aliases": ["tra co", "trà cổ", "mong cai"],
+          "lat": 21.4735,
+          "lon": 108.076,
+          "description": "Bãi biển dài, trữ tình, gần Móng Cái.",
+          "best_season": ["4-10"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "photo"]
+        }
+      ]
+    },
+    "hai_phong": {
+      "name": "Hải Phòng",
+      "aliases": ["hai phong", "hải phòng", "do son", "đồ sơn", "cat ba", "cát bà", "lan ha", "lan hạ"],
+      "region": "bac_bo",
+      "has_beach": true,
+      "message": "Hải Phòng nổi tiếng với Đồ Sơn và quần đảo Cát Bà - Lan Hạ.",
+      "center": { "lat": 20.8449, "lon": 106.6881 },
+      "beaches": [
+        {
+          "key": "do_son",
+          "name": "Đồ Sơn",
+          "aliases": ["do son", "đồ sơn", "doson"],
+          "lat": 20.6888,
+          "lon": 106.7812,
+          "description": "Bãi biển truyền thống, dịch vụ lâu đời.",
+          "best_season": ["4-10"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "cat_co",
+          "name": "Cát Cò (1-2-3) - Cát Bà",
+          "aliases": ["cat co", "cát cò", "cat ba", "cát bà"],
+          "lat": 20.7215,
+          "lon": 107.0444,
+          "description": "Các bãi nhỏ, nước trong, cảnh núi biển đẹp.",
+          "best_season": ["4-10"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Mùa cao điểm đông khách."],
+          "activities": ["swim", "kayak", "photo"]
+        }
+      ]
+    },
+    "thai_binh": {
+      "name": "Thái Bình",
+      "aliases": ["thai binh", "thái bình", "con vanh", "cồn vành"],
+      "region": "bac_bo",
+      "has_beach": true,
+      "message": "Biển phù sa ven cửa sông. Thích hợp dã ngoại, ít phù hợp tắm biển.",
+      "center": { "lat": 20.538, "lon": 106.387 },
+      "beaches": [
+        {
+          "key": "con_vanh",
+          "name": "Cồn Vành",
+          "aliases": ["con vanh", "cồn vành"],
+          "lat": 20.4732,
+          "lon": 106.5609,
+          "description": "Biển ven cửa sông, nhiều rừng ngập mặn.",
+          "best_season": ["4-9"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": ["Nước đục, đáy bùn - không khuyến nghị tắm."],
+          "activities": ["photo", "family"]
+        }
+      ]
+    },
+    "nam_dinh": {
+      "name": "Nam Định",
+      "aliases": ["nam dinh", "nam định", "hai hau", "hải hậu", "quat lam", "quất lâm"],
+      "region": "bac_bo",
+      "has_beach": true,
+      "message": "Bãi biển phù sa. Quất Lâm và Hải Hậu nổi tiếng địa phương.",
+      "center": { "lat": 20.417, "lon": 106.167 },
+      "beaches": [
+        {
+          "key": "quat_lam",
+          "name": "Quất Lâm",
+          "aliases": ["quat lam", "quất lâm"],
+          "lat": 20.241,
+          "lon": 106.358,
+          "description": "Biển phù sa, sóng nhỏ. Phù hợp dạo chơi, ăn hải sản.",
+          "best_season": ["4-9"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": ["Đáy bùn, tắm không lý tưởng."],
+          "activities": ["photo", "family"]
+        },
+        {
+          "key": "hai_hau",
+          "name": "Hải Hậu",
+          "aliases": ["hai hau", "hải hậu"],
+          "lat": 20.19,
+          "lon": 106.35,
+          "description": "Bãi biển dài, cát nâu, nổi tiếng cảnh bình minh hàng phi lao.",
+          "best_season": ["4-9"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["photo", "sunrise"]
+        }
+      ]
+    },
+    "thanh_hoa": {
+      "name": "Thanh Hóa",
+      "aliases": ["thanh hoa", "thanh hóa", "sam son", "sầm sơn", "hai tien", "hải tiến", "nghi son", "nghi sơn"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Sầm Sơn sôi động; Hải Tiến yên bình hơn; Nghi Sơn còn hoang sơ.",
+      "center": { "lat": 19.807, "lon": 105.776 },
+      "beaches": [
+        {
+          "key": "sam_son",
+          "name": "Sầm Sơn",
+          "aliases": ["sam son", "sầm sơn"],
+          "lat": 19.7363,
+          "lon": 105.9026,
+          "description": "Bãi đông, dịch vụ đa dạng, sóng mạnh.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "strong",
+          "caution_notes": ["Chú ý dòng rip current những ngày gió mạnh."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "hai_tien",
+          "name": "Hải Tiến",
+          "aliases": ["hai tien", "hải tiến"],
+          "lat": 19.9381,
+          "lon": 105.7372,
+          "description": "Yên bình, phù hợp gia đình.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "bai_dong",
+          "name": "Bãi Đông (Nghi Sơn)",
+          "aliases": ["bai dong", "bãi đông", "nghi son", "nghi sơn"],
+          "lat": 19.3728,
+          "lon": 105.7974,
+          "description": "Hoang sơ, nước trong.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "photo"]
+        }
+      ]
+    },
+    "nghe_an": {
+      "name": "Nghệ An",
+      "aliases": ["nghe an", "nghệ an", "cua lo", "cửa lò", "bai lu", "bãi lữ"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Cửa Lò nổi tiếng, Bãi Lữ yên tĩnh hơn.",
+      "center": { "lat": 18.675, "lon": 105.693 },
+      "beaches": [
+        {
+          "key": "cua_lo",
+          "name": "Cửa Lò",
+          "aliases": ["cua lo", "cửa lò"],
+          "lat": 18.7934,
+          "lon": 105.7263,
+          "description": "Bãi biển rộng, cát mịn, nước sạch.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "bai_lu",
+          "name": "Bãi Lữ",
+          "aliases": ["bai lu", "bãi lữ"],
+          "lat": 18.9286,
+          "lon": 105.6396,
+          "description": "Kết hợp núi và biển, cảnh đẹp, yên tĩnh.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "photo", "family"]
+        }
+      ]
+    },
+    "ha_tinh": {
+      "name": "Hà Tĩnh",
+      "aliases": ["ha tinh", "hà tĩnh", "thien cam", "thiên cầm", "xuan thanh", "xuân thành"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Thiên Cầm nổi tiếng nhất, yên bình.",
+      "center": { "lat": 18.343, "lon": 105.907 },
+      "beaches": [
+        {
+          "key": "thien_cam",
+          "name": "Thiên Cầm",
+          "aliases": ["thien cam", "thiên cầm"],
+          "lat": 18.1887,
+          "lon": 106.0124,
+          "description": "Nước trong, sóng êm.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "xuan_thanh",
+          "name": "Xuân Thành",
+          "aliases": ["xuan thanh", "xuân thành"],
+          "lat": 18.6465,
+          "lon": 105.7633,
+          "description": "Hoang sơ, phù hợp nghỉ dưỡng.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "quang_binh": {
+      "name": "Quảng Bình",
+      "aliases": ["quang binh", "quảng bình", "dong hoi", "đồng hới", "nhat le", "nhật lệ", "da nhay", "đá nhảy", "bao ninh"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Nhật Lệ ngay trung tâm; Đá Nhảy cảnh đá đẹp.",
+      "center": { "lat": 17.486, "lon": 106.598 },
+      "beaches": [
+        {
+          "key": "nhat_le",
+          "name": "Nhật Lệ",
+          "aliases": ["nhat le", "nhật lệ"],
+          "lat": 17.4821,
+          "lon": 106.6218,
+          "description": "Cát trắng, nước trong, gần trung tâm Đồng Hới.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Mùa bão 9-11 sóng lớn."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "da_nhay",
+          "name": "Đá Nhảy",
+          "aliases": ["da nhay", "đá nhảy"],
+          "lat": 17.7866,
+          "lon": 106.5572,
+          "description": "Bờ biển với bãi đá độc đáo, đẹp để chụp ảnh.",
+          "best_season": ["3-9"],
+          "swimming_suitable": false,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Đá trơn trượt, không phù hợp bơi."],
+          "activities": ["photo", "sunset"]
+        },
+        {
+          "key": "bao_ninh",
+          "name": "Bảo Ninh",
+          "aliases": ["bao ninh", "bảo ninh"],
+          "lat": 17.4684,
+          "lon": 106.6531,
+          "description": "Bãi cát dài phía Đông Đồng Hới.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "quang_tri": {
+      "name": "Quảng Trị",
+      "aliases": ["quang tri", "quảng trị", "cua tung", "cửa tùng", "cua viet", "cửa việt", "con co", "cồn cỏ"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Cửa Tùng từng là nữ hoàng các bãi tắm.",
+      "center": { "lat": 16.75, "lon": 107.19 },
+      "beaches": [
+        {
+          "key": "cua_tung",
+          "name": "Cửa Tùng",
+          "aliases": ["cua tung", "cửa tùng"],
+          "lat": 17.0575,
+          "lon": 107.0805,
+          "description": "Cát trắng mịn, bờ thoải.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "cua_viet",
+          "name": "Cửa Việt",
+          "aliases": ["cua viet", "cửa việt"],
+          "lat": 16.8601,
+          "lon": 107.1055,
+          "description": "Bờ cát rộng, phù hợp tắm biển.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "thua_thien_hue": {
+      "name": "Thừa Thiên Huế",
+      "aliases": ["thua thien hue", "thừa thiên huế", "lang co", "lăng cô", "thuan an", "thuận an"],
+      "region": "bac_trung_bo",
+      "has_beach": true,
+      "message": "Lăng Cô nằm trong vịnh đẹp thế giới.",
+      "center": { "lat": 16.467, "lon": 107.59 },
+      "beaches": [
+        {
+          "key": "lang_co",
+          "name": "Lăng Cô",
+          "aliases": ["lang co", "lăng cô"],
+          "lat": 16.2903,
+          "lon": 107.9552,
+          "description": "Vịnh biển đẹp, gần đèo Hải Vân.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "photo", "family"]
+        },
+        {
+          "key": "thuan_an",
+          "name": "Thuận An",
+          "aliases": ["thuan an", "thuận an"],
+          "lat": 16.5118,
+          "lon": 107.6222,
+          "description": "Cửa biển với bãi tắm dài.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "da_nang": {
+      "name": "Đà Nẵng",
+      "aliases": ["da nang", "đà nẵng", "danang", "my khe", "mỹ khê", "non nuoc", "non nước", "bac my an", "bắc mỹ an"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Thành phố đáng sống với Mỹ Khê nổi tiếng.",
+      "center": { "lat": 16.0678, "lon": 108.2208 },
+      "beaches": [
+        {
+          "key": "my_khe",
+          "name": "Mỹ Khê",
+          "aliases": ["my khe", "mỹ khê"],
+          "lat": 16.0616,
+          "lon": 108.2465,
+          "description": "Top bãi biển đẹp thế giới, cát trắng, nước ấm.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family", "photo"]
+        },
+        {
+          "key": "non_nuoc",
+          "name": "Non Nước",
+          "aliases": ["non nuoc", "non nước"],
+          "lat": 15.9895,
+          "lon": 108.2643,
+          "description": "Gần Ngũ Hành Sơn, yên tĩnh.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "bac_my_an",
+          "name": "Bắc Mỹ An",
+          "aliases": ["bac my an", "bắc mỹ an"],
+          "lat": 16.0363,
+          "lon": 108.2489,
+          "description": "Khu nhiều resort 5 sao.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "quang_nam": {
+      "name": "Quảng Nam",
+      "aliases": ["quang nam", "quảng nam", "hoi an", "hội an", "an bang", "an bàng", "cua dai", "cửa đại", "cu lao cham", "cù lao chàm"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Phối hợp biển - phố cổ Hội An tuyệt vời.",
+      "center": { "lat": 15.8794, "lon": 108.335 },
+      "beaches": [
+        {
+          "key": "an_bang",
+          "name": "An Bàng",
+          "aliases": ["an bang", "an bàng"],
+          "lat": 15.9076,
+          "lon": 108.3506,
+          "description": "Được du khách quốc tế yêu thích, nhiều beach bar.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Lưu ý sóng lớn ngày gió mạnh."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "cua_dai",
+          "name": "Cửa Đại",
+          "aliases": ["cua dai", "cửa đại"],
+          "lat": 15.8866,
+          "lon": 108.3539,
+          "description": "Bãi truyền thống, hiện có xói lở cát thời vụ.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Một số đoạn kè chắn sóng."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "cu_lao_cham",
+          "name": "Cù Lao Chàm",
+          "aliases": ["cu lao cham", "cù lao chàm"],
+          "lat": 15.9475,
+          "lon": 108.5072,
+          "description": "Khu dự trữ sinh quyển, lặn ngắm san hô.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Phụ thuộc thời tiết, tàu có thể dừng chạy."],
+          "activities": ["snorkel", "photo"]
+        }
+      ]
+    },
+    "quang_ngai": {
+      "name": "Quảng Ngãi",
+      "aliases": ["quang ngai", "quảng ngãi", "ly son", "lý sơn", "sa huynh", "sa huỳnh"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Đảo Lý Sơn nổi tiếng; Sa Huỳnh cát vàng.",
+      "center": { "lat": 15.1205, "lon": 108.7923 },
+      "beaches": [
+        {
+          "key": "ly_son",
+          "name": "Đảo Lý Sơn",
+          "aliases": ["ly son", "lý sơn"],
+          "lat": 15.3833,
+          "lon": 109.1167,
+          "description": "Nước xanh ngọc, cảnh quan núi lửa.",
+          "best_season": ["3-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Mùa gió chướng đi lại khó khăn."],
+          "activities": ["swim", "photo", "snorkel"]
+        },
+        {
+          "key": "sa_huynh",
+          "name": "Sa Huỳnh",
+          "aliases": ["sa huynh", "sa huỳnh"],
+          "lat": 14.7378,
+          "lon": 108.9682,
+          "description": "Cát vàng óng đặc trưng.",
+          "best_season": ["3-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "my_khe_quang_ngai",
+          "name": "Mỹ Khê (Quảng Ngãi)",
+          "aliases": ["my khe quang ngai", "mỹ khê quảng ngãi"],
+          "lat": 15.1469,
+          "lon": 108.8836,
+          "description": "Bãi cát dài, hàng dương xanh.",
+          "best_season": ["3-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        }
+      ]
+    },
+    "binh_dinh": {
+      "name": "Bình Định",
+      "aliases": ["binh dinh", "bình định", "quy nhon", "quy nhơn", "ky co", "kỳ co", "eo gio", "eo gió", "hon kho", "hòn khô"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Quy Nhơn – Maldives phiên bản Việt.",
+      "center": { "lat": 13.782, "lon": 109.219 },
+      "beaches": [
+        {
+          "key": "quy_nhon",
+          "name": "Bãi biển Quy Nhơn",
+          "aliases": ["quy nhon", "quy nhơn"],
+          "lat": 13.7704,
+          "lon": 109.2267,
+          "description": "Hình trăng khuyết, ngay trung tâm.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family", "photo"]
+        },
+        {
+          "key": "ky_co",
+          "name": "Kỳ Co",
+          "aliases": ["ky co", "kỳ co"],
+          "lat": 13.7431,
+          "lon": 109.2872,
+          "description": "Nước xanh 2 màu, bãi đẹp.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Đường vào bằng xe trung chuyển."],
+          "activities": ["swim", "photo"]
+        },
+        {
+          "key": "eo_gio",
+          "name": "Eo Gió",
+          "aliases": ["eo gio", "eo gió"],
+          "lat": 13.8426,
+          "lon": 109.2992,
+          "description": "Ngắm cảnh vách đá và biển.",
+          "best_season": ["3-9"],
+          "swimming_suitable": false,
+          "is_muddy": false,
+          "typical_waves": "strong",
+          "caution_notes": ["Không phù hợp tắm."],
+          "activities": ["photo", "sunset"]
+        },
+        {
+          "key": "hon_kho",
+          "name": "Hòn Khô",
+          "aliases": ["hon kho", "hòn khô"],
+          "lat": 13.8124,
+          "lon": 109.2989,
+          "description": "Lặn ngắm san hô, con đường giữa biển mùa nước cạn.",
+          "best_season": ["4-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Phụ thuộc thủy triều."],
+          "activities": ["snorkel", "photo"]
+        }
+      ]
+    },
+    "phu_yen": {
+      "name": "Phú Yên",
+      "aliases": ["phu yen", "phú yên", "bai xep", "bãi xép", "vinh vung ro", "vịnh vũng rô", "bai mon", "bãi môn"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Phú Yên hoang sơ, phim 'Hoa vàng trên cỏ xanh'.",
+      "center": { "lat": 13.088, "lon": 109.091 },
+      "beaches": [
+        {
+          "key": "bai_xep",
+          "name": "Bãi Xép",
+          "aliases": ["bai xep", "bãi xép"],
+          "lat": 13.0369,
+          "lon": 109.2767,
+          "description": "Bối cảnh phim, có bãi xương rồng đẹp.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["photo", "swim"]
+        },
+        {
+          "key": "vinh_vung_ro",
+          "name": "Vịnh Vũng Rô",
+          "aliases": ["vinh vung ro", "vịnh vũng rô"],
+          "lat": 12.9087,
+          "lon": 109.3874,
+          "description": "Vịnh kín gió, nước êm như hồ.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["kayak", "swim"]
+        },
+        {
+          "key": "bai_mon",
+          "name": "Bãi Môn",
+          "aliases": ["bai mon", "bãi môn"],
+          "lat": 12.9956,
+          "lon": 109.4587,
+          "description": "Dưới chân hải đăng Đại Lãnh, ngắm bình minh sớm.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["sunrise", "photo", "swim"]
+        }
+      ]
+    },
+    "khanh_hoa": {
+      "name": "Khánh Hòa",
+      "aliases": ["khanh hoa", "khánh hòa", "nha trang", "doc let", "dốc lết", "bai dai", "bãi dài", "binh ba", "bình ba", "vinpearl"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Thủ phủ du lịch biển Việt Nam – Nha Trang, Cam Ranh.",
+      "center": { "lat": 12.2529, "lon": 109.1893 },
+      "beaches": [
+        {
+          "key": "nha_trang_beach",
+          "name": "Bãi biển Nha Trang",
+          "aliases": ["nha trang", "tran phu", "trần phú"],
+          "lat": 12.2388,
+          "lon": 109.1967,
+          "description": "Bãi chính dọc Trần Phú, dịch vụ đầy đủ.",
+          "best_season": ["3-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family", "photo"]
+        },
+        {
+          "key": "bai_dai_cam_ranh",
+          "name": "Bãi Dài (Cam Ranh)",
+          "aliases": ["bai dai", "bãi dài", "cam ranh"],
+          "lat": 11.9987,
+          "lon": 109.2273,
+          "description": "Thiên đường resort ven biển.",
+          "best_season": ["1-9"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Tháng 10-12 sóng lớn, nước đục."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "doc_let",
+          "name": "Dốc Lết",
+          "aliases": ["doc let", "dốc lết"],
+          "lat": 12.5411,
+          "lon": 109.2193,
+          "description": "Bãi tắm cạn, an toàn cho trẻ em.",
+          "best_season": ["3-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "binh_ba",
+          "name": "Đảo Bình Ba",
+          "aliases": ["binh ba", "bình ba"],
+          "lat": 11.9019,
+          "lon": 109.2165,
+          "description": "Vương quốc tôm hùm, lặn ngắm san hô.",
+          "best_season": ["2-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Hạn chế khách nước ngoài một số khu vực."],
+          "activities": ["snorkel", "photo"]
+        }
+      ]
+    },
+    "ninh_thuan": {
+      "name": "Ninh Thuận",
+      "aliases": ["ninh thuan", "ninh thuận", "vinh hy", "vịnh vĩnh hy", "ninh chu", "ninh chữ", "binh tien", "bình tiên"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Miền nắng gió – Vịnh Vĩnh Hy đẹp bậc nhất.",
+      "center": { "lat": 11.567, "lon": 108.988 },
+      "beaches": [
+        {
+          "key": "ninh_chu",
+          "name": "Ninh Chữ",
+          "aliases": ["ninh chu", "ninh chữ"],
+          "lat": 11.5907,
+          "lon": 109.1178,
+          "description": "Vòng cung cát mịn, bình minh đẹp.",
+          "best_season": ["2-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["sunrise", "swim"]
+        },
+        {
+          "key": "vinh_hy",
+          "name": "Vịnh Vĩnh Hy",
+          "aliases": ["vinh hy", "vĩnh hy"],
+          "lat": 11.7706,
+          "lon": 109.2133,
+          "description": "Vịnh kín gió, nước trong, cảnh đẹp.",
+          "best_season": ["2-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Một số vịnh sâu – tuân thủ khu tắm an toàn."],
+          "activities": ["snorkel", "kayak", "photo"]
+        },
+        {
+          "key": "binh_tien",
+          "name": "Bình Tiên",
+          "aliases": ["binh tien", "bình tiên"],
+          "lat": 11.8492,
+          "lon": 109.2254,
+          "description": "Cát trắng mịn, nước xanh, hoang sơ.",
+          "best_season": ["2-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "photo"]
+        }
+      ]
+    },
+    "binh_thuan": {
+      "name": "Bình Thuận",
+      "aliases": ["binh thuan", "bình thuận", "mui ne", "mũi né", "phan thiet", "phan thiết", "hon rom", "hòn rơm", "co thach", "cổ thạch", "phu quy", "phú quý"],
+      "region": "nam_trung_bo",
+      "has_beach": true,
+      "message": "Thủ phủ resort – Mũi Né, Phan Thiết, đảo Phú Quý.",
+      "center": { "lat": 10.980, "lon": 108.250 },
+      "beaches": [
+        {
+          "key": "mui_ne",
+          "name": "Mũi Né",
+          "aliases": ["mui ne", "mũi né"],
+          "lat": 10.932,
+          "lon": 108.279,
+          "description": "Resort dọc bờ biển, phù hợp nghỉ dưỡng.",
+          "best_season": ["11-5"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Mùa gió 6-9 có sóng lớn."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "hon_rom",
+          "name": "Hòn Rơm",
+          "aliases": ["hon rom", "hòn rơm"],
+          "lat": 10.9708,
+          "lon": 108.3702,
+          "description": "Sóng êm, bãi dài.",
+          "best_season": ["11-5"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "co_thach",
+          "name": "Cổ Thạch",
+          "aliases": ["co thach", "cổ thạch"],
+          "lat": 11.1284,
+          "lon": 108.6927,
+          "description": "Đá bảy màu, rêu xanh tháng 3.",
+          "best_season": ["2-4"],
+          "swimming_suitable": false,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Bãi đá – không phù hợp bơi."],
+          "activities": ["photo", "sunset"]
+        },
+        {
+          "key": "phu_quy",
+          "name": "Đảo Phú Quý",
+          "aliases": ["phu quy", "phú quý"],
+          "lat": 10.513,
+          "lon": 108.953,
+          "description": "Đảo còn hoang sơ, nước trong.",
+          "best_season": ["12-6"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Phụ thuộc thời tiết tàu ra đảo."],
+          "activities": ["snorkel", "photo", "swim"]
+        }
+      ]
+    },
+    "ba_ria_vung_tau": {
+      "name": "Bà Rịa - Vũng Tàu",
+      "aliases": ["ba ria vung tau", "bà rịa vũng tàu", "vung tau", "vũng tàu", "bai truoc", "bãi trước", "bai sau", "bãi sau", "long hai", "long hải", "ho tram", "hồ tràm", "ho coc", "hồ cốc", "con dao", "côn đảo"],
+      "region": "nam_bo",
+      "has_beach": true,
+      "message": "Điểm đến biển gần TP.HCM – Bãi Trước/Bãi Sau/Long Hải/Hồ Tràm/Côn Đảo.",
+      "center": { "lat": 10.346, "lon": 107.084 },
+      "beaches": [
+        {
+          "key": "bai_truoc",
+          "name": "Bãi Trước",
+          "aliases": ["bai truoc", "bãi trước", "front beach"],
+          "lat": 10.3477,
+          "lon": 107.0792,
+          "description": "Trung tâm thành phố, cảnh đẹp, không lý tưởng tắm.",
+          "best_season": ["11-8"],
+          "swimming_suitable": false,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Chủ yếu ngắm cảnh, đi dạo."],
+          "activities": ["photo", "sunset"]
+        },
+        {
+          "key": "bai_sau",
+          "name": "Bãi Sau",
+          "aliases": ["bai sau", "bãi sau", "back beach", "thuy van", "thùy vân"],
+          "lat": 10.338,
+          "lon": 107.092,
+          "description": "Bãi tắm chính, dài, sóng to hơn.",
+          "best_season": ["11-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Lưu ý khu vực sóng mạnh."],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "long_hai",
+          "name": "Long Hải",
+          "aliases": ["long hai", "long hải"],
+          "lat": 10.414,
+          "lon": 107.208,
+          "description": "Yên tĩnh, nhiều resort nghỉ dưỡng.",
+          "best_season": ["11-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "ho_tram",
+          "name": "Hồ Tràm",
+          "aliases": ["ho tram", "hồ tràm"],
+          "lat": 10.493,
+          "lon": 107.393,
+          "description": "Khu nghỉ dưỡng cao cấp, rừng sát biển.",
+          "best_season": ["11-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family", "photo"]
+        },
+        {
+          "key": "ho_coc",
+          "name": "Hồ Cốc",
+          "aliases": ["ho coc", "hồ cốc"],
+          "lat": 10.491,
+          "lon": 107.465,
+          "description": "Hoang sơ, yên tĩnh, nước trong.",
+          "best_season": ["11-8"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "photo"]
+        },
+        {
+          "key": "con_dao",
+          "name": "Côn Đảo",
+          "aliases": ["con dao", "côn đảo"],
+          "lat": 8.695,
+          "lon": 106.609,
+          "description": "Thiên đường biển đảo, nước trong, san hô.",
+          "best_season": ["1-6", "9-12"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Mùa gió Tây Nam (7-8) sóng lớn."],
+          "activities": ["snorkel", "swim", "photo"]
+        }
+      ]
+    },
+    "kien_giang": {
+      "name": "Kiên Giang",
+      "aliases": ["kien giang", "kiên giang", "phu quoc", "phú quốc", "ha tien", "hà tiên", "nam du"],
+      "region": "tay_nam_bo",
+      "has_beach": true,
+      "message": "Thiên đường đảo ngọc Phú Quốc, Hà Tiên, Nam Du.",
+      "center": { "lat": 10.021, "lon": 105.080 },
+      "beaches": [
+        {
+          "key": "bai_sao",
+          "name": "Bãi Sao (Phú Quốc)",
+          "aliases": ["bai sao", "bãi sao", "sao beach"],
+          "lat": 10.0583,
+          "lon": 104.0304,
+          "description": "Cát trắng mịn như kem.",
+          "best_season": ["11-4"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": ["Mùa mưa 5-10 có rác tự nhiên dạt bờ."],
+          "activities": ["swim", "photo"]
+        },
+        {
+          "key": "bai_khem",
+          "name": "Bãi Khem (Phú Quốc)",
+          "aliases": ["bai khem", "bãi khem"],
+          "lat": 10.0385,
+          "lon": 104.0229,
+          "description": "Hình cánh cung, yên tĩnh, nhiều resort 5 sao.",
+          "best_season": ["11-4"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["swim", "family"]
+        },
+        {
+          "key": "bai_dai_pq",
+          "name": "Bãi Dài (Phú Quốc)",
+          "aliases": ["bai dai pq", "bãi dài pq", "long beach"],
+          "lat": 10.2266,
+          "lon": 103.9503,
+          "description": "Bờ biển dài phía Tây đảo, ngắm hoàng hôn đẹp.",
+          "best_season": ["11-4"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["sunset", "swim"]
+        },
+        {
+          "key": "ha_tien",
+          "name": "Hà Tiên (Mũi Nai)",
+          "aliases": ["ha tien", "hà tiên", "mui nai", "mũi nai"],
+          "lat": 10.3943,
+          "lon": 104.4671,
+          "description": "Biển phù sa pha cát, ngắm hoàng hôn.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": ["Không lý tưởng tắm."],
+          "activities": ["sunset", "photo"]
+        },
+        {
+          "key": "nam_du",
+          "name": "Quần đảo Nam Du",
+          "aliases": ["nam du"],
+          "lat": 9.6897,
+          "lon": 105.8647,
+          "description": "Đảo hoang sơ, nước xanh ngắt.",
+          "best_season": ["12-4"],
+          "swimming_suitable": true,
+          "is_muddy": false,
+          "typical_waves": "moderate",
+          "caution_notes": ["Phụ thuộc tàu, thời tiết."],
+          "activities": ["snorkel", "photo", "swim"]
+        }
+      ]
+    },
+    "ho_chi_minh": {
+      "name": "TP. Hồ Chí Minh",
+      "aliases": ["ho chi minh", "hồ chí minh", "sai gon", "sài gòn", "tphcm", "hcm", "can gio", "cần giờ"],
+      "region": "nam_bo",
+      "has_beach": true,
+      "message": "TP.HCM có biển Cần Giờ (biển bùn). Muốn tắm biển xanh nên đi Vũng Tàu/Hồ Tràm.",
+      "center": { "lat": 10.776, "lon": 106.700 },
+      "beaches": [
+        {
+          "key": "can_gio",
+          "name": "Biển Cần Giờ",
+          "aliases": ["can gio", "cần giờ"],
+          "lat": 10.4112,
+          "lon": 106.9545,
+          "description": "Biển phù sa (cát đen/bùn), chủ yếu tham quan rừng ngập mặn.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": ["Không phù hợp tắm biển."],
+          "activities": ["photo", "food"]
+        }
+      ]
+    },
+    "soc_trang": {
+      "name": "Sóc Trăng",
+      "aliases": ["soc trang", "sóc trăng", "my thanh", "mỹ thanh"],
+      "region": "tay_nam_bo",
+      "has_beach": true,
+      "message": "Biển ven cửa sông, nước đục, không phù hợp tắm.",
+      "center": { "lat": 9.603, "lon": 105.98 },
+      "beaches": [
+        {
+          "key": "my_thanh",
+          "name": "Mỹ Thanh",
+          "aliases": ["my thanh", "mỹ thanh"],
+          "lat": 9.3369,
+          "lon": 106.0939,
+          "description": "Biển phù sa, gió lớn theo mùa.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "moderate",
+          "caution_notes": [],
+          "activities": ["photo"]
+        }
+      ]
+    },
+    "tra_vinh": {
+      "name": "Trà Vinh",
+      "aliases": ["tra vinh", "trà vinh", "ba dong", "bãi biển ba động", "ba động"],
+      "region": "tay_nam_bo",
+      "has_beach": true,
+      "message": "Bãi Ba Động – cát nâu, nước đục, không phù hợp tắm.",
+      "center": { "lat": 9.934, "lon": 106.345 },
+      "beaches": [
+        {
+          "key": "ba_dong",
+          "name": "Ba Động",
+          "aliases": ["ba dong", "ba động"],
+          "lat": 9.5597,
+          "lon": 106.4942,
+          "description": "Bờ biển cát nâu, sóng nhỏ.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["photo", "food"]
+        }
+      ]
+    },
+    "bac_lieu": {
+      "name": "Bạc Liêu",
+      "aliases": ["bac lieu", "bạc liêu", "nha mat", "nhà mát"],
+      "region": "tay_nam_bo",
+      "has_beach": true,
+      "message": "Khu Nhà Mát ven biển – công viên nước, không phải bãi tắm biển xanh.",
+      "center": { "lat": 9.294, "lon": 105.722 },
+      "beaches": [
+        {
+          "key": "nha_mat",
+          "name": "Nhà Mát",
+          "aliases": ["nha mat", "nhà mát"],
+          "lat": 9.2626,
+          "lon": 105.7267,
+          "description": "Khu du lịch biển nhân tạo, ven biển phù sa.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["family", "photo"]
+        }
+      ]
+    },
+    "ca_mau": {
+      "name": "Cà Mau",
+      "aliases": ["ca mau", "cà mau", "dat mui", "đất mũi", "khai long"],
+      "region": "tay_nam_bo",
+      "has_beach": true,
+      "message": "Biển bờ bùn – tham quan mũi Cà Mau, không tắm biển.",
+      "center": { "lat": 9.176, "lon": 105.155 },
+      "beaches": [
+        {
+          "key": "khai_long",
+          "name": "Khái Long",
+          "aliases": ["khai long", "khái long"],
+          "lat": 8.6718,
+          "lon": 104.8995,
+          "description": "Bờ bùn, ven rừng ngập mặn, tham quan check-in.",
+          "best_season": ["11-4"],
+          "swimming_suitable": false,
+          "is_muddy": true,
+          "typical_waves": "calm",
+          "caution_notes": [],
+          "activities": ["photo"]
+        }
+      ]
+    },
+    "ha_noi": {
+      "name": "Hà Nội",
+      "aliases": ["ha noi", "hà nội", "hn"],
+      "region": "noi_dia",
+      "has_beach": false,
+      "message": "Hà Nội không có biển. Gợi ý: Hạ Long (Quảng Ninh) ~2.5-3h, Đồ Sơn (Hải Phòng) ~2-2.5h.",
+      "center": { "lat": 21.0285, "lon": 105.8542 },
+      "beaches": []
+    },
+    "lam_dong": {
+      "name": "Lâm Đồng",
+      "aliases": ["lam dong", "lâm đồng", "da lat", "đà lạt"],
+      "region": "noi_dia",
+      "has_beach": false,
+      "message": "Lâm Đồng là phố núi. Gợi ý: Nha Trang (Khánh Hòa) hoặc Phan Rang (Ninh Thuận).",
+      "center": { "lat": 11.9404, "lon": 108.4583 },
+      "beaches": []
+    }
+  }
+}

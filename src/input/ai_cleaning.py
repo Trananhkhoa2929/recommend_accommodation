@@ -29,7 +29,7 @@ def clean_location_input(raw_text: str, api_key: str) -> Tuple[Optional[Dict], O
     
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         
         prompt = f"""Bạn là trợ lý phân tích địa danh biển Việt Nam. 
 
